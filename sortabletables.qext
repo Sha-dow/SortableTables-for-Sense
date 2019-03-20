@@ -1,0 +1,16 @@
+{
+	"name": "Sortable Tables",
+	"description": "Customizable table extension for Qlik Sense",
+	"icon": "table",
+	"type": "visualization",
+	"version": "0.0.1",
+	"author": "Hannu Ranta - Qlik Finland",
+	"homepage": "http://www.hannuranta.fi",
+	"keywords": "qlik-sense, visualization, table",
+	"license": "MIT",
+	"repository": "<TO BE ADDED>",
+	"preview" : "<TO BE ADDED>",
+	"dependencies": {
+		"qlik-sense": ">=3.0.x"
+	}
+}
