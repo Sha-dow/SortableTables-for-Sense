@@ -37,7 +37,7 @@ define( [
             support: { snapshot: true, export: true },
             paint: function ( $element , layout ) {
             
-				$element.html( '<div id="datatable-div" class="table-main"></div>' ).height($element.height());
+				$element.html( '<div id="treeview-div" class="treeview-main"></div><div id="datatable-div" class="table-main"></div>' ).height($element.height());
 				
 				var self = this;
 				
@@ -94,7 +94,8 @@ define( [
 					],
 					"pageLength": 10,
 					"scrollY": (self.$element.height() - 120) + "px",
-					"scrollCollapse": true
+					"scrollCollapse": true,
+					"bFilter": layout.settings.search
 				});
 				
 				table

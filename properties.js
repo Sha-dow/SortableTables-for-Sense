@@ -8,13 +8,13 @@ define( [], function () {
     var dimensions = {
         uses: "dimensions",
         min: 1,
-        max: 5
+        max: 20
     };
 
     var measures = {
         uses: "measures",
         min: 1,
-        max: 10
+        max: 20
     };
 
     // *****************************************************************************
@@ -32,12 +32,74 @@ define( [], function () {
   	};
 
     // *****************************************************************************
-    // Highcharts Section
+    // Styling Section
+    // *****************************************************************************
+    var categories = {
+        type: "array",
+        ref: "listItems",
+        label: "Categories",
+        itemTitleRef: "settings.parent",
+        allowAdd: true,
+        allowRemove: true,
+        addTranslation: "Add Relationship",
+        items: {
+            parent: {
+                component: "dropdown",
+                type: "string",
+                options: [{
+                    label: "Dim1",
+                    value: "Dim1"
+                }, {
+                    label: "Dim2",
+                    value: "Dim2"
+                }, {
+                    label: "Dim3",
+                    value: "Dim3"
+                }],
+                ref: "settings.parent",
+                label: "Parent"
+            },
+            children: {
+                component: "dropdown",
+                type: "string",
+                options: [{
+                    label: "Dim1",
+                    value: "Dim1"
+                }, {
+                    label: "Dim2",
+                    value: "Dim2"
+                }, {
+                    label: "Dim3",
+                    value: "Dim3"
+                }],
+                ref: "settings.children",
+                label: "Children"
+            }
+        }
+    };
+
+    // *****************************************************************************
+    // Styling Section
     // *****************************************************************************
     var sortabletables = {
     	component: "expandable-items",
     	label: "Table Options",
-    	items: {}
+        items: {
+            ShowSearch: {
+                type: "boolean",
+                component: "switch",
+                label: "Search",
+                ref: "settings.search",
+                options: [{
+                    value: true,
+                    label: "On"
+                }, {
+                    value: false,
+                    label: "off"
+                }],
+                defaultValue: true
+            }
+        }
     };
 
     // *****************************************************************************
@@ -51,6 +113,7 @@ define( [], function () {
             measures: measures,
             sorting: sorting,
             appearance: appearanceSection,
+            categories: categories,
             tables: sortabletables
         }
     };
